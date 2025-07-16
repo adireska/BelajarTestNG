@@ -2,10 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Belajar TestNG Suite">
   <test name="App Test">
+  <parameter name="username" value="jhondoe"></parameter>
+  <parameter name="invalidUsername" value="jonosebastian"></parameter>
+  <parameter name="password" value="123qwerty"></parameter>
+  <parameter name="email" value="jhondoe@yopmail.com"></parameter>
+
+    <groups>
+      <run>
+        <include name="setup"></include>
+        <include name="high"></include>
+        <include name="negative-test"></include>
+      </run>
+    </groups>
+
     <classes>
-        <!-- <class name="com.juaracoding.btestng.Hooks"></class> -->
-        <class name="com.juaracoding.btestng.CalculatorTest"></class>
-        <class name="com.juaracoding.btestng.SignInTest"></class>
+        <class name="com.juaracoding.btestng.AuthenticationTest"></class>
     </classes>
+
   </test>
 </suite>
